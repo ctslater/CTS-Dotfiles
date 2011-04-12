@@ -27,7 +27,8 @@ autocmd WinLeave * setlocal nocursorline
 
 " Disable the toolbar
 if has("gui_running")
-    set toolbar=
+    set guioptions=egmrt
+    "set toolbar=
 endif
 
 colorscheme cts1
