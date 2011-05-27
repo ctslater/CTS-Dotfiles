@@ -19,6 +19,10 @@ filetype plugin indent on
 
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
+# I want parenthesis to separate words
+set iskeyword-=(
+set iskeyword-=)
+
 " Cursor line highlighting
 " hi CursorLine ctermbg=lightgrey
 set cursorline
