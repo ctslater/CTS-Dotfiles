@@ -1,0 +1,22 @@
+umask 022
+
+setenv SVN_EDITOR "emacs"
+
+setenv CLICOLOR "1"
+setenv LSCOLORS "BxFxCxDxCxegedabagacad"
+
+if (`hostname -s ` == "turtle") then
+    echo "turtle"
+    setenv CTS_DATA_PATH "/Volumes/Turtle2/ctslater/"
+endif
+
+setenv CLOUDY_DATA_PATH "/n/Users/ctslater/c08.00/data"
+
+setenv RUBYLIB "/n/Users/ctslater/.gems/lib:/n/Users/ctslater/.gems/gems"
+setenv GEM_HOME "/n/Users/ctslater/.gems"
+
+set path = ( /n/Users/ctslater/.gems/bin /n/Users/ctslater/bin /Pyxis1/ctslater/pgsql/bin $path )
+
+setenv PGDATA "/Pyxis1/ctslater/pgdata"
+
+#set LD_LIBRARY_PATH = ( /n/Users/ctslater/libraries/hdf5/lib $LD_LIBRARY_PATH)
