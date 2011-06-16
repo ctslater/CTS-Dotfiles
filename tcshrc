@@ -6,7 +6,6 @@ setenv CLICOLOR "1"
 setenv LSCOLORS "BxFxCxDxCxegedabagacad"
 
 if (`hostname -s ` == "turtle") then
-    echo "turtle"
     setenv CTS_DATA_PATH "/Volumes/Turtle2/ctslater/"
 endif
 
