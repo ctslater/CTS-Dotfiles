@@ -19,7 +19,7 @@ filetype plugin indent on
 
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
-# I want parenthesis to separate words
+" I want parenthesis to separate words
 set iskeyword-=(
 set iskeyword-=)
 
