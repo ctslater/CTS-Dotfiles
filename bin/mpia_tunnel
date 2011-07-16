@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Setup tunnel to both aida 80 and aida 41217
+
+ssh -fN -L 1234:aida80:22 -L 1235:aida41217:22 ctslater@rigel.mpia-hd.mpg.de
+
+echo $!
+
+

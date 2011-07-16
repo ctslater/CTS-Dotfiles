@@ -1,0 +1,20 @@
+Host pyxis
+HostName pyxis.astro.lsa.umich.edu
+
+Host login
+HostName login.itd.umich.edu
+
+Host slothrop
+User hoho
+HostName 192.168.1.100
+
+Host turtle
+HostName turtle.astro.lsa.umich.edu
+
+Host aida80
+Hostname localhost
+Port 1234
+
+Host aida41217
+Hostname localhost
+Port 1235

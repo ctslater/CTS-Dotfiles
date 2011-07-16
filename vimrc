@@ -15,13 +15,16 @@ set number
 " Toggle line numbers and fold column for easy copying:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
+let python_highlight_all = 1
+
 filetype plugin indent on
 
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,
+" autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 " I want parenthesis to separate words
-set iskeyword-=(
-set iskeyword-=)
+"set iskeyword-=(
+"set iskeyword-=)
 
 " Cursor line highlighting
 " hi CursorLine ctermbg=lightgrey
