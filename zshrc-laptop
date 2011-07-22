@@ -3,10 +3,15 @@
 # multiple times to it.
 typeset -U path
 
+# Smart autocomplete, per program
+autoload -U compinit
+compinit
+
 # Color ls output
 export CLICOLOR="True"
 
 export CTS_DATA_DIR='/Users/ctslater/Data'
+export LSD_DB='/Users/ctslater/lsd_db'
 
 # Cloudy
 export CLOUDY_DATA_PATH="/Users/ctslater/c08.00/data"
