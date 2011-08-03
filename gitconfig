@@ -1,3 +1,7 @@
 [user]
-	name = Colin Slater
-email = ctslater@umich.edu
+    name = Colin Slater
+    email = ctslater@umich.edu
+
+[alias]
+    co = checkout
+
