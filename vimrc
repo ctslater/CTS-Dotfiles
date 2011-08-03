@@ -22,6 +22,9 @@ filetype plugin indent on
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,
 " autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
+" Load templates
+autocmd! BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
+
 " I want parenthesis to separate words
 "set iskeyword-=(
 "set iskeyword-=)
