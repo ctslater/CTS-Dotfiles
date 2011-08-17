@@ -29,6 +29,12 @@ autocmd! BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 "set iskeyword-=(
 "set iskeyword-=)
 
+" Prevent tab completion from selecting certain binary files
+set wildignore+=*.png,*.eps,*.ps,*.pdf,*.dvi,*.pyc,*.aux
+" These file types will show up in tab completion,
+" but with lower priority than other files
+set suffixes+=.log,.dat
+
 " Cursor line highlighting
 " hi CursorLine ctermbg=lightgrey
 set cursorline
