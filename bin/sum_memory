@@ -1,0 +1,2 @@
+#!/bin/bash
+let sum=0,cmd=$1; for i in `ps xav | grep $cmd | tr -s ' ' | cut -d ' ' -f 8 `; do let sum+=$i ; done; echo $(expr $sum / 1000000) "GB";

@@ -10,6 +10,7 @@ set tabstop=8
 set softtabstop=4
 set autoindent
 set expandtab
+set visualbell
 
 set number
 " Toggle line numbers and fold column for easy copying:
@@ -30,7 +31,7 @@ autocmd! BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 "set iskeyword-=)
 
 " Prevent tab completion from selecting certain binary files
-set wildignore+=*.png,*.eps,*.ps,*.pdf,*.dvi,*.pyc,*.aux
+set wildignore+=*.png,*.eps,*.ps,*.pdf,*.dvi,*.pyc,*.aux,*.fits
 " These file types will show up in tab completion,
 " but with lower priority than other files
 set suffixes+=.log,.dat
