@@ -30,6 +30,9 @@ autocmd! BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 "set iskeyword-=(
 "set iskeyword-=)
 
+" Set up mapped keys
+nmap ,t :ToggleWord<CR>
+
 " Prevent tab completion from selecting certain binary files
 set wildignore+=*.png,*.eps,*.ps,*.pdf,*.dvi,*.pyc,*.aux,*.fits
 " These file types will show up in tab completion,
