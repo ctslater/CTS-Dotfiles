@@ -1,8 +1,14 @@
 [user]
     name = Colin Slater
     email = ctslater@umich.edu
+[color]
+        ui = auto
 
 [alias]
     co = checkout
     s = status .
+    ra = !git --no-pager log --graph --abbrev-commit --date=relative -10 --all 
+
+[format]
+        pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar)
 

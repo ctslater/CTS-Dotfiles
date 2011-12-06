@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+commits=($(git log --format="%H" | tr '\n' ' ' ))
+
+for commit in $commits ; do 
+    git co -q $commit
+    linecount=$(wc -l $(find . -iname \*.py) | grep total | awk '{print $1}')
+    timestamp=$(git log -1 --format="%at")
+    echo $timestamp $linecount
+done
+
+git co master

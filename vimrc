@@ -33,6 +33,11 @@ autocmd! BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 " Set up mapped keys
 nmap ,t :ToggleWord<CR>
 
+" highlight search terms
+" disable highlight after enter
+set hlsearch
+:nnoremap <CR> :nohlsearch<cr>
+
 " Prevent tab completion from selecting certain binary files
 set wildignore+=*.png,*.eps,*.ps,*.pdf,*.dvi,*.pyc,*.aux,*.fits
 " These file types will show up in tab completion,
@@ -44,6 +49,20 @@ set suffixes+=.log,.dat
 set cursorline
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
+
+" Remap the tab key to do autocompletion or indentation depending on the
+" context (from http://www.vim.org/tips/tip.php?tip_id=102)
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
 
 " Disable the toolbar
 if has("gui_running")
