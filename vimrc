@@ -33,6 +33,8 @@ autocmd! BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 " Set up mapped keys
 nmap ,t :ToggleWord<CR>
 
+command! W :w
+
 " highlight search terms
 " disable highlight after enter
 set hlsearch

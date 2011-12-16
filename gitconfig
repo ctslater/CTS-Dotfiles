@@ -7,6 +7,7 @@
 [alias]
     co = checkout
     s = status .
+    st = status -uno .
     ra = !git --no-pager log --graph --abbrev-commit --date=relative -10 --all 
 
 [format]
