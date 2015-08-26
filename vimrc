@@ -17,11 +17,14 @@ set number
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 let python_highlight_all = 1
+let loaded_matchparen = 1
 
 filetype plugin indent on
 
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,
 " autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+"
+let tex_no_error=1
 
 " Load templates
 autocmd! BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
@@ -44,7 +47,7 @@ set hlsearch
 set wildignore+=*.png,*.eps,*.ps,*.pdf,*.dvi,*.pyc,*.aux,*.fits
 " These file types will show up in tab completion,
 " but with lower priority than other files
-set suffixes+=.log,.dat
+set suffixes+=.log,.dat,.out
 
 " Cursor line highlighting
 " hi CursorLine ctermbg=lightgrey

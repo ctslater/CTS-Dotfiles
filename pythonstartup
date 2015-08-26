@@ -1,3 +1,48 @@
 from numpy import *
-import pyfits
-import pywcs
+from astropy.io import fits,ascii
+
+import re, os
+
+histfile = os.path.join(os.environ["HOME"], ".python-history")
+
+try:
+   # Try to set up command history completion/saving/reloading
+   import readline, atexit, rlcompleter
+   readline.parse_and_bind('tab: complete')
+
+   readline.set_history_length(-1)     # don't truncate history list
+
+   try:
+       readline.read_history_file(histfile)
+   except IOError:
+       pass  # It doesn't exist yet.
+
+   def savehist(nsave = 1000):
+       try:
+           global histfile
+           old_nsave = readline.get_history_length()
+           readline.set_history_length(nsave)
+
+           rawHistfile = histfile + "~"
+           readline.write_history_file(rawHistfile)
+
+           ifd = open(rawHistfile)
+           ofd = open(histfile, "w")
+           oline = None
+           for line in ifd:
+               if re.search(r"^([clnqsw]|tb\(\)|down|p +.*|up)$", line): # forget pdb commands
+                   continue
+               if line != oline:
+                   print >> ofd, line,
+                   oline = line
+
+           os.unlink(rawHistfile)
+
+           readline.set_history_length(old_nsave)
+       except Exception, msg:
+           print 'Unable to save Python command history:', msg
+
+   atexit.register(savehist)
+   del atexit
+except ImportError:
+   pass
