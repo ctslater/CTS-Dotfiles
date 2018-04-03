@@ -10,24 +10,10 @@ compinit
 # Color ls output
 export CLICOLOR="True"
 
-export CTS_DATA_DIR='/Users/ctslater/Data'
-export LSD_DB='/Users/ctslater/lsd_db'
-
-# Cloudy
-export CLOUDY_DATA_PATH="/Users/ctslater/c08.00/data"
-path=(/Users/ctslater/c08.00/source $path)
-
-# Path to macports. Need it first, so it overrides default versions
-path=(/opt/local/bin $path)
-
-path=($HOME/bin $path)
 
 # Python
 export PYTHONSTARTUP='/Users/ctslater/.pythonstartup'
 
-# Ruby
-export GEM_HOME="$HOME/gems"
-path=($GEM_HOME/bin $path)
 
 #
 # Aliases/Functions
@@ -40,7 +26,7 @@ bindkey ^F forward-word
 bindkey ^B backward-word
 
 zstyle ':completion:*:(vim|vi):*' ignored-patterns '*.(o|a|so|aux|dvi|pdf|ps|eps|pyc|png|bib|out|log)'
-zstyle ':completion:*:open:*' ignored-patterns '*.(py|pyc)'
+#zstyle ':completion:*:open:*' ignored-patterns '*.(py|pyc)'
 
 ZSH=$HOME/.oh-my-zsh
 
@@ -51,6 +37,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 setopt correct
 setopt no_share_history
+setopt IGNORE_EOF
 
 
 

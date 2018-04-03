@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 
-from numpy import *
+from __future__ import print_function
+
+import numpy as np
 import matplotlib
 matplotlib.use('Agg')
-from pylab import *
+import matplotlib.pyplot as plt
 import sys
 import os
 from astropy.io import ascii,fits

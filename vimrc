@@ -11,6 +11,7 @@ set softtabstop=4
 set autoindent
 set expandtab
 set visualbell
+set nojoinspaces
 
 set number
 " Toggle line numbers and fold column for easy copying:
@@ -21,10 +22,18 @@ let loaded_matchparen = 1
 
 filetype plugin indent on
 
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,
+autocmd FileType python set complete+=k~/.vim/syntax/python.vim 
+
+" Having lots of trouble getting python to use period as a word separator,
+" and the isk setting makes no sense.
+" isk+=,(
+" set iskeyword-=.
 " autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 "
 let tex_no_error=1
+
+
+autocmd Filetype cpp match Error /\s\+$/
 
 " Load templates
 autocmd! BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
